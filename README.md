@@ -17,4 +17,4 @@
 
 # Live Demo
 ### Try the live demo of the project here:
-https://heart-health-stujazan.herokuapp.com/
+https://stujazan-streamlit.herokuapp.com/
