@@ -32,6 +32,8 @@ Oldpeak = weight = st.number_input('Old peak')
 #ST_Slope
 slope = st.selectbox('The slope of the peak exercise ST segment',df['slope'].unique())
 if st.button('Predict Heart Health'):
+    if (Age >80 and Age <90) and (sex==1)and(cp==3)and (trestbps >160) and (chol>260) and (fbs==1) and (restecg==1) and (thalach>160) and (exang==1) and (Oldpeak>2.0) and (slope==2):
+        st.header("You've a heart disease. Please, consult your doctor")
     query = np.array([Age,Sex,cp,trestbps,chol,fbs,restecg,thalach,exang,Oldpeak,slope])
     query = query.reshape(1, 11)
     result=str(pipe.predict(query)[0])
