@@ -1,3 +1,4 @@
+
 import streamlit as st
 import pickle
 import pandas as pd
@@ -32,16 +33,15 @@ Oldpeak = weight = st.number_input('Old peak')
 #ST_Slope
 slope = st.selectbox('The slope of the peak exercise ST segment',df['slope'].unique())
 if st.button('Predict Heart Health'):
-    if (Age > 30 and trestbps > 170 and chol > 265 and thalach > 210):
-        st.header("You've a heart disease. Please, consult your doctor")
+    if (Age > 65 and trestbps > 170 and chol > 265 and thalach > 210):
+       st.header("You've a heart disease. Please, consult your doctor")
     else :
-        query = np.array([Age,Sex,cp,trestbps,chol,fbs,restecg,thalach,exang,Oldpeak,slope])
-        query = query.reshape(1, 11)
-        result=str(pipe.predict(query)[0])
-        if result == 1:
-            st.header("You've a heart disease. Please, consult your doctor")
-        else :
-            st.header("You don't have a heart disease")
-
+       query = np.array([Age,Sex,cp,trestbps,chol,fbs,restecg,thalach,exang,Oldpeak,slope])
+       query = query.reshape(1, 11)
+       result=str(pipe.predict(query)[0])
+       if result == 1:
+          st.header("You've a heart disease. Please, consult your doctor")
+       else:
+           st.header("You don't have a heart disease")
 
 
