@@ -32,19 +32,16 @@ Oldpeak = weight = st.number_input('Old peak')
 #ST_Slope
 slope = st.selectbox('The slope of the peak exercise ST segment',df['slope'].unique())
 if st.button('Predict Heart Health'):
-    if (Age >80 and Age <90) and (sex==1)and(cp==3)and (trestbps >160) and (chol>260) and (fbs==1) and (restecg==1) and (thalach>160) and (exang==1) and (Oldpeak>2.0) and (slope==2):
+    if (Age > 30 and trestbps > 170 and chol > 265 and thalach > 210):
         st.header("You've a heart disease. Please, consult your doctor")
-    query = np.array([Age,Sex,cp,trestbps,chol,fbs,restecg,thalach,exang,Oldpeak,slope])
-    query = query.reshape(1, 11)
-    result=str(pipe.predict(query)[0])
-    if result == 1:
-        st.header("You've a heart disease. Please, consult your doctor")
-    else:
-        st.header("You don't have a heart disease")
-    # st.title("Your Heart Health is " + str(pipe.predict(query)[0]))
-    # query = query.reshape(1, 11)
-    # st.title("Your Heart Health Status is "+ str(int(pipe.predict(query)[0])))
-    # st.header("Your Heart Health(1 means you've a disease) Status is:" + str(int(result[0])))
+    else :
+        query = np.array([Age,Sex,cp,trestbps,chol,fbs,restecg,thalach,exang,Oldpeak,slope])
+        query = query.reshape(1, 11)
+        result=str(pipe.predict(query)[0])
+        if result == 1:
+            st.header("You've a heart disease. Please, consult your doctor")
+        else :
+            st.header("You don't have a heart disease")
 
 
 
