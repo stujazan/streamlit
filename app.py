@@ -21,7 +21,7 @@ trestbps = st.number_input('Resting Blood Pressure')
 #Cholesterol
 chol = st.number_input('Serum Cholesterol')
 #FastingBS
-fbs = st.selectbox('Fasting Blood Sugar',[0,1])
+fbs = st.selectbox('Fasting Blood Sugar',["mal","fimal"])
 #RestingECG
 restecg = st.selectbox('Resting Electrocardiogram Results',df['restecg'].unique())
 #MaxHR
