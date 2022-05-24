@@ -8,7 +8,7 @@ import numpy as np
 pipe = pickle.load(open('pipe.pkl','rb'))
 df = pickle.load(open('df.pkl','rb'))
 
-st.title("Heart Disease Predictor by Jazan student")
+st.title("Heart  Jazan student")
 # st.text("1 means you've a heart disease, 0 means you don't have a heart disease")
 #Age
 Age = st.number_input('Age of Person')
