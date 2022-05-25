@@ -38,9 +38,9 @@ if st.button('Predict Heart Health'):
        query = np.array([Age,Sex,cp,trestbps,chol,fbs,restecg,thalach,exang,Oldpeak,slope])
        query = query.reshape(1, 11)
        result=str(pipe.predict(query)[0])
-       if result == "fimal":
+       if result == 1:
           st.header("You've a heart disease. Please, consult your doctor")
-       else if result=="mail":
+       else :
            st.header("You don't have a heart disease")
             
 
