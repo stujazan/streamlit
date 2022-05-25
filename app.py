@@ -12,7 +12,7 @@ st.title("Heart Disease Predictor by Jazan studen")
 #Age
 Age = st.number_input('Age of Person')
 #Sex
-Sex = st.selectbox('Sex',True , False)
+Sex = st.selectbox('Sex')
 #ChestPainType
 cp = st.selectbox('Chest Pain Type',df['cp'].unique())
 #RestingBP
